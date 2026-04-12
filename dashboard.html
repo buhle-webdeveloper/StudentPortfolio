@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your StudentPortfolio dashboard — saved careers, study goals, and progress tracking.">
+  <title>Dashboard — StudentPortfolio</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="shell-body">
+  <div class="shell-stripe" aria-hidden="true">
+    <span class="shell-stripe-blue"></span>
+    <span class="shell-stripe-red"></span>
+    <span class="shell-stripe-yellow"></span>
+    <span class="shell-stripe-green"></span>
+  </div>
+  <a class="skip-link" href="#dashMain">Skip to content</a>
+  <div class="shell-overlay" id="dashOverlay"></div>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar" id="dashSidebar" aria-label="Dashboard navigation">
+    <div class="sidebar-header">
+      <a class="sidebar-logo" href="index.html">
+        <img src="assets/images/logo.png" alt="StudentPortfolio">
+        <span class="sidebar-logo-name">Student<span style="color:var(--clr-text)">Portfolio</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Dashboard sections">
+
+      <!-- Group: Overview -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="overview" aria-expanded="true">
+          Overview <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-overview">
+          <button class="sidebar-link active" data-section="home">
+            <i class="fas fa-gauge-high" aria-hidden="true"></i>
+            <span class="link-text">Dashboard</span>
+          </button>
+          <button class="sidebar-link" data-section="progress">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            <span class="link-text">My Progress</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Group: Career Tools -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="careers" aria-expanded="true">
+          Career Tools <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-careers">
+          <button class="sidebar-link" data-section="saved">
+            <i class="fas fa-bookmark" aria-hidden="true"></i>
+            <span class="link-text">Saved Careers</span>
+            <span class="link-count" id="savedCount">0</span>
+          </button>
+          <a class="sidebar-link" href="explore.html">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+            <span class="link-text">Explore Careers</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group: Learning -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="learning" aria-expanded="true">
+          Learning <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-learning">
+          <button class="sidebar-link" data-section="goals">
+            <i class="fas fa-bullseye" aria-hidden="true"></i>
+            <span class="link-text">My Goals</span>
+          </button>
+          <button class="sidebar-link" data-section="study">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            <span class="link-text">Study Plan</span>
+          </button>
+          <a class="sidebar-link" href="explore.html">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            <span class="link-text">Study Guides</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Group: Account -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="account" aria-expanded="true">
+          Account <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-account">
+          <button class="sidebar-link" data-section="profile">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span class="link-text">Profile &amp; Settings</span>
+          </button>
+          <button class="sidebar-link logout-link" id="dashLogout">
+            <i class="fas fa-right-from-bracket" aria-hidden="true"></i>
+            <span class="link-text">Log out</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-user" id="sidebarUser">
+      <div class="sidebar-avatar" id="sidebarAvatar">S</div>
+      <div>
+        <div class="sidebar-user-name"  id="sidebarName">Loading…</div>
+        <div class="sidebar-user-grade" id="sidebarGrade">Grade —</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main Column ── -->
+  <div class="shell-main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div>
+          <div class="topbar-title"    id="topbarTitle">Dashboard</div>
+          <div class="topbar-subtitle" id="topbarSubtitle">Welcome back</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" aria-label="Notifications">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+          <span class="notif-dot" aria-hidden="true"></span>
+        </button>
+        <div class="topbar-user" id="topbarUser">
+          <div class="topbar-avatar" id="topbarAvatar">S</div>
+          <div>
+            <div class="topbar-user-name"  id="topbarName">Student</div>
+            <div class="topbar-user-grade" id="topbarGrade">Grade —</div>
+          </div>
+          <i class="fas fa-chevron-down" style="font-size:10px;color:var(--clr-text-3);margin-left:2px;" aria-hidden="true"></i>
+        </div>
+        <button class="topbar-menu-btn" id="dashMenuBtn"
+          aria-label="Open sidebar" aria-controls="dashSidebar" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main id="dashMain" class="page-content" tabindex="-1">
+
+      <!-- ── HOME ── -->
+      <section class="page-section active" id="section-home">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-card-icon stat-icon-blue"><i class="fas fa-bookmark"></i></div>
+              <span class="stat-trend trend-up">Active</span>
+            </div>
+            <div class="stat-value" id="statSaved">0</div>
+            <div class="stat-label">Saved Careers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-card-icon stat-icon-gold"><i class="fas fa-bullseye"></i></div>
+              <span class="stat-trend trend-up">Growing</span>
+            </div>
+            <div class="stat-value" id="statGoals">0</div>
+            <div class="stat-label">Study Goals</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-card-icon stat-icon-teal"><i class="fas fa-fire"></i></div>
+              <span class="stat-trend trend-up">This week</span>
+            </div>
+            <div class="stat-value">5</div>
+            <div class="stat-label">Day Streak</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-card-icon stat-icon-blue"><i class="fas fa-graduation-cap"></i></div>
+            </div>
+            <div class="stat-value" id="statGrade">—</div>
+            <div class="stat-label">Current Grade</div>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Quick Actions</h3></div>
+            <div class="panel-body">
+              <div class="quick-links">
+                <a class="quick-link" href="explore.html"><i class="fas fa-compass"></i> Explore Careers</a>
+                <button class="quick-link" data-section-nav="goals"><i class="fas fa-bullseye"></i> My Goals</button>
+                <button class="quick-link" data-section-nav="study"><i class="fas fa-book-open"></i> Study Plan</button>
+                <a class="quick-link" href="explore.html"><i class="fas fa-lightbulb"></i> Study Guides</a>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3 class="panel-title">Recent Saves</h3>
+              <button class="btn btn-ghost btn-sm" data-section-nav="saved">View all</button>
+            </div>
+            <div class="panel-body" id="recentSaves">
+              <div class="empty-state" style="padding:var(--sp-8)">
+                <div class="empty-icon"><i class="fas fa-bookmark"></i></div>
+                <p style="font-size:var(--text-sm);color:var(--clr-text-2);font-family:var(--font-sans)">
+                  No saved careers yet.<br>
+                  <a href="explore.html" style="color:var(--clr-blue)">Explore careers</a> to bookmark them here.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SAVED CAREERS ── -->
+      <section class="page-section" id="section-saved">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:var(--sp-5)">
+          <a class="btn btn-primary btn-sm" href="explore.html"><i class="fas fa-plus"></i> Add more</a>
+        </div>
+        <div class="saved-grid" id="savedCareersGrid"></div>
+      </section>
+
+      <!-- ── GOALS ── -->
+      <section class="page-section" id="section-goals">
+        <div class="panel">
+          <div class="panel-header"><h3 class="panel-title">Current Goals</h3></div>
+          <div class="panel-body">
+            <div class="goal-list" id="goalList"></div>
+            <form class="add-goal-form" id="addGoalForm" style="margin-top:var(--sp-5)">
+              <input class="form-control" type="text" id="goalInput"
+                placeholder="e.g. Pass Mathematics with 70%…" maxlength="120">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add goal
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── STUDY PLAN ── -->
+      <section class="page-section" id="section-study">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">This Week's Tasks</h3>
+            <span style="font-size:var(--text-xs);color:var(--clr-text-2);font-family:var(--font-sans)" id="studyProgress">0 / 6 done</span>
+          </div>
+          <div class="panel-body">
+            <div class="study-checklist" id="studyChecklist"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><h3 class="panel-title">Study Guides Library</h3></div>
+          <div class="panel-body">
+            <p style="font-size:var(--text-sm);color:var(--clr-text-2);font-family:var(--font-sans);margin-bottom:var(--sp-4)">Access our full study guides library for exam preparation and career research.</p>
+            <a class="btn btn-primary" href="explore.html"><i class="fas fa-book-open"></i> Open Study Guides</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROGRESS ── -->
+      <section class="page-section" id="section-progress">
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Overall Progress</h3></div>
+            <div class="panel-body" id="overallProgressBars">
+              <p style="font-size:var(--text-sm);color:var(--clr-text-2);font-family:var(--font-sans)">Loading progress...</p>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Career Readiness</h3></div>
+            <div class="panel-body">
+              <div class="progress-row">
+                <div class="progress-header"><span class="progress-lbl">Careers Explored</span><span class="progress-val" id="progressExplored">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="progressExploredBar" style="width:0%"></div></div>
+              </div>
+              <div class="progress-row">
+                <div class="progress-header"><span class="progress-lbl">Goals Set</span><span class="progress-val" id="progressGoals">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="progressGoalsBar" style="width:0%"></div></div>
+              </div>
+              <div class="progress-row">
+                <div class="progress-header"><span class="progress-lbl">Study Plan</span><span class="progress-val" id="progressStudy">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="progressStudyBar" style="width:0%"></div></div>
+              </div>
+              <p style="font-size:var(--text-xs);color:var(--clr-text-2);font-family:var(--font-sans);margin-top:var(--sp-5)">
+                Save careers, set goals, and complete study tasks to increase your readiness score.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PROFILE ── -->
+      <section class="page-section" id="section-profile">
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Account Details</h3></div>
+            <div class="panel-body">
+              <div style="display:flex;align-items:center;gap:var(--sp-5);margin-bottom:var(--sp-6)">
+                <div style="width:72px;height:72px;border-radius:50%;background:var(--clr-blue);color:#fff;font-size:var(--text-3xl);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0" id="profileAvatar">S</div>
+                <div>
+                  <div style="font-size:var(--text-xl);font-weight:700;font-family:var(--font-display);color:var(--clr-text)" id="profileName">—</div>
+                  <div style="font-size:var(--text-sm);color:var(--clr-text-2);font-family:var(--font-sans)" id="profileEmail">—</div>
+                  <div style="margin-top:var(--sp-2)" id="profileGradeBadge"></div>
+                </div>
+              </div>
+              <div style="font-size:var(--text-sm);font-family:var(--font-sans);color:var(--clr-text-2);display:flex;flex-direction:column;gap:var(--sp-2)">
+                <p><strong style="color:var(--clr-text)">Member since:</strong> <span id="profileJoined">—</span></p>
+                <p><strong style="color:var(--clr-text)">Role:</strong> <span id="profileRole">Student</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Edit Profile</h3></div>
+            <div class="panel-body">
+              <form id="profileEditForm" style="display:flex;flex-direction:column;gap:var(--sp-4)">
+                <div>
+                  <label for="profileEditName" style="font-size:var(--text-sm);font-weight:600;font-family:var(--font-sans);color:var(--clr-text);display:block;margin-bottom:var(--sp-1)">Full Name</label>
+                  <input class="form-control" type="text" id="profileEditName" placeholder="Your full name" maxlength="60">
+                </div>
+                <div>
+                  <label for="profileEditGrade" style="font-size:var(--text-sm);font-weight:600;font-family:var(--font-sans);color:var(--clr-text);display:block;margin-bottom:var(--sp-1)">Grade</label>
+                  <select class="form-control" id="profileEditGrade">
+                    <option value="">— Select grade —</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                    <option value="Post-Matric">Post-Matric</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="align-self:flex-start">
+                  <i class="fas fa-save"></i> Save Changes
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header"><h3 class="panel-title">Session</h3></div>
+            <div class="panel-body">
+              <p style="font-size:var(--text-sm);color:var(--clr-text-2);font-family:var(--font-sans);margin-bottom:var(--sp-6)">
+                Log out to return to the login screen. Your saved data will be preserved.
+              </p>
+              <button class="btn btn-danger" id="profileLogout">
+                <i class="fas fa-right-from-bracket"></i> Log out
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+  <script src="data/careers-data.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="StudentPortfolio helps South African high school learners discover career paths, understand subject requirements, and plan their futures with confidence.">
+  <title>StudentPortfolio — From Classroom to Career</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ── Brand Stripe ── -->
+  <div class="brand-stripe" aria-hidden="true">
+    <div class="brand-stripe-blue"></div>
+    <div class="brand-stripe-red"></div>
+    <div class="brand-stripe-yellow"></div>
+    <div class="brand-stripe-green"></div>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/images/logo.png" alt="StudentPortfolio logo">
+        <span class="nav-brand-name">Student<span style="color:var(--clr-text)">Portfolio</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="explore.html">Explore Careers</a>
+      </nav>
+
+      <div class="nav-cta" id="navCta">
+        <a class="btn btn-ghost" href="auth.html">Log in</a>
+        <a class="btn btn-primary" href="auth.html?tab=register">
+          <i class="fas fa-rocket" aria-hidden="true"></i> Get started free
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open navigation menu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="nav-menu-mobile" id="navMenuMobile">
+      <nav class="nav-links" aria-label="Mobile navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="explore.html">Explore Careers</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="auth.html">Log in</a>
+        <a class="btn btn-primary" href="auth.html?tab=register">
+          <i class="fas fa-rocket" aria-hidden="true"></i> Get started free
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ── Hero ── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            For South African Learners &middot; Grade 10–12
+          </div>
+          <h1 id="hero-heading" class="hero-title">
+            Your roadmap from<br><span class="hl">high school</span> to a<br>career that fits
+          </h1>
+          <p class="hero-subtitle">
+            Discover 10+ career pathways, explore real NSC subject requirements, and build
+            the study habits that will get you there — all in one free platform.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="auth.html?tab=register">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Start exploring — it's free
+            </a>
+            <a class="btn btn-ghost btn-lg" href="explore.html">
+              <i class="fas fa-compass" aria-hidden="true"></i> Browse careers
+            </a>
+          </div>
+
+          <!-- Social proof -->
+          <div class="hero-social">
+            <div class="hero-avatars" aria-hidden="true">
+              <div class="hero-avatar" style="background:#4285F4">TM</div>
+              <div class="hero-avatar" style="background:#0F9D58">AN</div>
+              <div class="hero-avatar" style="background:#DB4437">LK</div>
+              <div class="hero-avatar" style="background:#F4B400;color:#333">SM</div>
+            </div>
+            <div>
+              <div class="hero-stars">★★★★★</div>
+              <div class="hero-social-text"><strong>2,500+</strong> SA students trust StudentPortfolio</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating preview cards -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="hero-card-icon"><i class="fas fa-laptop-code"></i></div>
+              <div>
+                <h4>Information Technology</h4>
+                <p>Software Developer · Data Scientist</p>
+              </div>
+            </div>
+            <p>Maths required · R20k–R120k/month</p>
+            <span class="hero-card-tag">Excellent Outlook</span>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="hero-card-icon" style="background:var(--clr-success-bg);color:var(--clr-success)"><i
+                  class="fas fa-stethoscope"></i></div>
+              <div>
+                <h4>Health Sciences</h4>
+                <p>Doctor · Nurse · Pharmacist</p>
+              </div>
+            </div>
+            <p>Life Sciences + Maths · 4–6 years</p>
+            <span class="hero-card-tag" style="background:var(--clr-success-bg);color:var(--clr-success)">High
+              Demand</span>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="hero-card-icon" style="background:var(--clr-gold-bg);color:var(--clr-gold-dark)"><i
+                  class="fas fa-gears"></i></div>
+              <div>
+                <h4>Engineering</h4>
+                <p>Civil · Electrical · Mechanical</p>
+              </div>
+            </div>
+            <p>Maths + Physical Sciences · ECSA registered</p>
+            <span class="hero-card-tag" style="background:var(--clr-gold-bg);color:var(--clr-gold-dark)">Excellent
+              Outlook</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ── -->
+    <section id="features" class="section" aria-labelledby="features-heading">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-eyebrow">Why StudentPortfolio?</p>
+          <h2 id="features-heading">Everything you need to choose your path</h2>
+          <p>We combine career discovery, real subject requirements, and practical study tools — so you're never
+            choosing in the dark.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-route" aria-hidden="true"></i></div>
+            <h3>Career Clarity</h3>
+            <p>Structured pathways with full descriptions, NSC subject requirements, salary ranges, top SA institutions,
+              and example roles for every career.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></div>
+            <h3>Live Search</h3>
+            <p>Find careers and study topics in real time. Type a subject, skill, or role and instantly filter results —
+              no page reloads needed.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bookmark" aria-hidden="true"></i></div>
+            <h3>Save &amp; Track</h3>
+            <p>Bookmark careers you love, set study goals, and track your progress in your personal dashboard. Your data
+              stays between sessions.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+            <h3>Study Guides</h3>
+            <p>9 in-depth guides covering Mathematics, essay writing, time management, memory techniques, and exam
+              preparation strategies.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+            <h3>Real Data API</h3>
+            <p>Live education statistics sourced from the World Bank API, giving you real enrollment and education trend
+              data for South Africa.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+            <h3>SA-Focused</h3>
+            <p>Built specifically for South Africa — NSC subjects, HPCSA/ECSA/SAICA registration, real SA universities,
+              and ZAR salary ranges.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Side-by-side: Built for SA Students ── -->
+    <section class="sidebyside section-alt" aria-labelledby="sbs-heading">
+      <div class="sidebyside-inner">
+        <div class="sidebyside-copy">
+          <p class="sidebyside-eyebrow">Built for South Africa</p>
+          <h2 id="sbs-heading">Everything your future needs, in one place</h2>
+          <p>StudentPortfolio is designed around the South African NSC curriculum, local universities, and professional
+            bodies — so the information you get is actually relevant to you.</p>
+          <div class="sidebyside-bullets">
+            <div class="sbs-bullet">
+              <div class="sbs-bullet-icon"><i class="fas fa-check"></i></div>
+              <div class="sbs-bullet-text">
+                <h4>Real APS score requirements</h4>
+                <p>Each career shows the exact minimum APS score and which NSC subjects you need.</p>
+              </div>
+            </div>
+            <div class="sbs-bullet">
+              <div class="sbs-bullet-icon"><i class="fas fa-university"></i></div>
+              <div class="sbs-bullet-text">
+                <h4>SA Universities listed</h4>
+                <p>See which institutions — UCT, Wits, Stellenbosch, UNISA and more — offer each qualification.</p>
+              </div>
+            </div>
+            <div class="sbs-bullet">
+              <div class="sbs-bullet-icon"><i class="fas fa-coins"></i></div>
+              <div class="sbs-bullet-text">
+                <h4>ZAR salary ranges</h4>
+                <p>Junior, mid, and senior salary ranges in South African Rand so you can plan realistically.</p>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-lg" href="explore.html">
+            <i class="fas fa-compass" aria-hidden="true"></i> Explore career paths
+          </a>
+        </div>
+        <div class="sidebyside-visual">
+          <div class="sbs-vis-header">
+            <div class="sbs-vis-avatar">BJ</div>
+            <div class="sbs-vis-meta">
+              <h4>Buhle Jongile</h4>
+              <p>Grade 12 · Gauteng · Planning Engineering</p>
+            </div>
+          </div>
+          <div class="sbs-vis-stat">
+            <div>
+              <div class="sbs-vis-stat-label">Careers Saved</div>
+            </div>
+            <div class="sbs-vis-stat-value">3</div>
+          </div>
+          <div class="sbs-vis-career">
+            <div class="sbs-vis-career-icon"><i class="fas fa-gears"></i></div>
+            <div>
+              <div class="sbs-vis-career-name">Civil Engineering</div>
+              <div class="sbs-vis-career-cat">STEM · 4 years</div>
+            </div>
+            <span class="badge badge-blue">Excellent</span>
+          </div>
+          <div class="sbs-vis-career">
+            <div class="sbs-vis-career-icon" style="background:var(--clr-success-bg);color:var(--clr-success)"><i
+                class="fas fa-laptop-code"></i></div>
+            <div>
+              <div class="sbs-vis-career-name">Information Technology</div>
+              <div class="sbs-vis-career-cat">STEM · 3 years</div>
+            </div>
+            <span class="badge badge-green">Good</span>
+          </div>
+          <div class="sbs-vis-stat">
+            <div>
+              <div class="sbs-vis-stat-label">Study Goals Set</div>
+            </div>
+            <div class="sbs-vis-stat-value" style="color:var(--clr-success)">5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How It Works ── -->
+    <section id="how-it-works" class="section" aria-labelledby="how-heading">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-eyebrow">Simple Process</p>
+          <h2 id="how-heading">How it works</h2>
+          <p>Four steps from school to a career you understand and can plan for.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-num">1</div>
+            <h3>Create your free account</h3>
+            <p>Register in under 60 seconds. Choose your grade and unlock your personal dashboard instantly.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">2</div>
+            <h3>Explore career paths</h3>
+            <p>Browse 10+ pathways with descriptions, subject requirements, salary ranges, and SA universities.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">3</div>
+            <h3>Save and compare</h3>
+            <p>Bookmark careers that interest you. Your saved list lives in your dashboard — return anytime.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">4</div>
+            <h3>Plan and study</h3>
+            <p>Set subject goals, use our study guides, and track your progress as you work toward your career.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Career Categories + API Widget ── -->
+    <section class="section section-alt" aria-labelledby="cats-heading">
+      <div class="section-inner">
+        <div class="section-head">
+          <p class="section-eyebrow">Career Categories</p>
+          <h2 id="cats-heading">Find your field</h2>
+          <p>From STEM to Creative Arts, we cover the full range of South African career opportunities.</p>
+        </div>
+        <div class="category-strip">
+          <a class="cat-chip" href="explore.html?cat=STEM"><i class="fas fa-flask"></i> STEM</a>
+          <a class="cat-chip" href="explore.html?cat=Health Sciences"><i class="fas fa-stethoscope"></i> Health
+            Sciences</a>
+          <a class="cat-chip" href="explore.html?cat=Business"><i class="fas fa-chart-line"></i> Commerce &amp;
+            Business</a>
+          <a class="cat-chip" href="explore.html?cat=Social Sciences"><i class="fas fa-scale-balanced"></i> Social
+            Sciences</a>
+          <a class="cat-chip" href="explore.html?cat=Creative Arts"><i class="fas fa-palette"></i> Creative Arts</a>
+          <a class="cat-chip" href="explore.html"><i class="fas fa-plus"></i> View all</a>
+        </div>
+
+        <!-- Live World Bank API Widget -->
+        <div class="api-widget" id="apiWidget">
+          <div class="api-widget-header">
+            <div class="api-widget-icon"><i class="fas fa-satellite-dish"></i></div>
+            <div>
+              <div class="api-widget-title">Live Education Data — South Africa</div>
+              <div class="api-widget-subtitle">World Bank API · Secondary school enrollment rates</div>
+            </div>
+          </div>
+          <div class="api-stat-row" id="apiStats">
+            <div class="api-stat">
+              <div class="api-stat-val" id="apiStatVal1">—<span>%</span></div>
+              <div class="api-stat-lbl" id="apiStatLbl1">Latest enrollment rate</div>
+            </div>
+            <div class="api-stat">
+              <div class="api-stat-val" id="apiStatVal2">—<span>%</span></div>
+              <div class="api-stat-lbl" id="apiStatLbl2">Prior year</div>
+            </div>
+            <div class="api-stat">
+              <div class="api-stat-val"><span id="apiTrend">—</span></div>
+              <div class="api-stat-lbl">Trend</div>
+            </div>
+          </div>
+          <div class="api-source">
+            <i class="fas fa-link"></i>
+            Data sourced live from World Bank Open Data API (api.worldbank.org) · Indicator: SE.SEC.ENRR
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Band ── -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="cta-band-inner">
+        <h2 id="cta-heading">Ready to plan your future?</h2>
+        <p>Join thousands of South African learners who have already mapped their path from classroom to career.</p>
+        <div class="cta-btns">
+          <a class="btn btn-white btn-lg" href="auth.html?tab=register">
+            <i class="fas fa-rocket" aria-hidden="true"></i> Create free account
+          </a>
+          <a class="btn btn-outline-white btn-lg" href="explore.html">
+            <i class="fas fa-compass" aria-hidden="true"></i> Explore without signing up
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="StudentPortfolio" height="30">
+          <span><span class="footer-logo-name">Student<span style="color:var(--clr-text)">Portfolio</span></span></span>
+        </div>
+        <p class="footer-desc">Helping South African high school learners discover, plan, and pursue careers with
+          confidence. Completely free.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <nav class="footer-links" aria-label="Platform links">
+          <a href="explore.html">Explore Careers</a>
+          <a href="auth.html?tab=register">Sign up free</a>
+          <a href="auth.html">Log in</a>
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Careers</h4>
+        <nav class="footer-links" aria-label="Career links">
+          <a href="explore.html?cat=STEM">STEM</a>
+          <a href="explore.html?cat=Health Sciences">Health Sciences</a>
+          <a href="explore.html?cat=Business">Commerce</a>
+          <a href="explore.html?cat=Creative Arts">Creative Arts</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <nav class="footer-links" aria-label="Contact links">
+          <a href="explore.html">Explore</a>
+          <a href="admin.html">Admin Portal</a>
+          <a href="mailto:hello@studentportfolio.co.za">hello@studentportfolio.co.za</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 StudentPortfolio — Built for South African learners.</p>
+      <div class="footer-legal">
+        <a href="#"
+          onclick="event.preventDefault();alert('Privacy Policy\n\nStudentPortfolio respects your privacy. We store only the data you provide (name, email, grade) locally in your browser. No personal data is sent to external servers. We use the World Bank API solely for public education statistics.\n\nContact: hello@studentportfolio.co.za')">Privacy
+          Policy</a>
+        <a href="#"
+          onclick="event.preventDefault();alert('Terms of Use\n\nStudentPortfolio is a free educational tool for South African learners. Content is provided for informational purposes only. Career data, salary ranges, and institution listings are approximate and should be verified independently. By using this site you agree to these terms.\n\nContact: hello@studentportfolio .co.za')">Terms
+          of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite"></div>
+  <script src="data/careers-data.js"></script>
+  <script src="assets/js/auth.js" defer></script>
+  <script src="assets/js/api.js" defer></script>
+  <script src="assets/js/landing.js" defer></script>
+</body>
+
+</html>

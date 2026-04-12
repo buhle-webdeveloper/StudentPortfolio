@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore South African career pathways, requirements, salaries, and study guides for high school learners.">
+  <title>Explore Careers — StudentPortfolio</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/shell.css">
+  <link rel="stylesheet" href="assets/css/explore.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="shell-body">
+  <div class="shell-stripe" aria-hidden="true">
+    <span class="shell-stripe-blue"></span>
+    <span class="shell-stripe-red"></span>
+    <span class="shell-stripe-yellow"></span>
+    <span class="shell-stripe-green"></span>
+  </div>
+  <a class="skip-link" href="#exploreMain">Skip to content</a>
+  <div class="shell-overlay" id="exploreOverlay"></div>
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar" id="exploreSidebar" aria-label="Explore navigation">
+    <div class="sidebar-header">
+      <a class="sidebar-logo" href="index.html">
+        <img src="assets/images/logo.png" alt="StudentPortfolio">
+        <span class="sidebar-logo-name">Student<span style="color:var(--clr-text)">Portfolio</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- Group: Explore -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="explore" aria-expanded="true">
+          Explore <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-explore">
+          <button class="sidebar-link active" data-section="careers">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+            <span class="link-text">All Careers</span>
+          </button>
+          <button class="sidebar-link" data-section="study">
+            <i class="fas fa-book-open" aria-hidden="true"></i>
+            <span class="link-text">Study Guides</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Group: Categories -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="categories" aria-expanded="true">
+          Categories <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-categories">
+          <button class="sidebar-link" data-filter="STEM">
+            <i class="fas fa-flask" aria-hidden="true"></i>
+            <span class="link-text">STEM</span>
+          </button>
+          <button class="sidebar-link" data-filter="Health Sciences">
+            <i class="fas fa-stethoscope" aria-hidden="true"></i>
+            <span class="link-text">Health Sciences</span>
+          </button>
+          <button class="sidebar-link" data-filter="Business">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <span class="link-text">Commerce</span>
+          </button>
+          <button class="sidebar-link" data-filter="Social Sciences">
+            <i class="fas fa-scale-balanced" aria-hidden="true"></i>
+            <span class="link-text">Social Sciences</span>
+          </button>
+          <button class="sidebar-link" data-filter="Creative Arts">
+            <i class="fas fa-palette" aria-hidden="true"></i>
+            <span class="link-text">Creative Arts</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Group: Account -->
+      <div class="sidebar-group">
+        <button class="sidebar-group-btn open" data-group="account" aria-expanded="true">
+          Account <i class="fas fa-chevron-down sidebar-group-chevron" aria-hidden="true"></i>
+        </button>
+        <div class="sidebar-group-items open" id="group-account">
+          <a class="sidebar-link" href="dashboard.html">
+            <i class="fas fa-gauge-high" aria-hidden="true"></i>
+            <span class="link-text">Dashboard</span>
+          </a>
+          <a class="sidebar-link" href="index.html">
+            <i class="fas fa-house" aria-hidden="true"></i>
+            <span class="link-text">Home</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ── Shell Main ── -->
+  <div class="shell-main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div>
+          <div class="topbar-title" id="exploreTopbarTitle">Explore Careers</div>
+          <div class="topbar-subtitle" id="exploreTopbarSubtitle">Browse paths and find your direction</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon-btn" aria-label="Notifications">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+          <span class="notif-dot" aria-hidden="true"></span>
+        </button>
+        <div class="topbar-user" id="exploreUserArea">
+          <div class="topbar-avatar" id="exploreTopbarAvatar">D</div>
+          <div>
+            <div class="topbar-user-name" id="exploreTopbarName">Demo</div>
+            <div class="topbar-user-grade" id="exploreTopbarGrade">Grade —</div>
+          </div>
+          <i class="fas fa-chevron-down" style="font-size:10px;color:var(--clr-text-3);margin-left:2px;" aria-hidden="true"></i>
+        </div>
+        <button class="topbar-menu-btn" id="exploreMenuBtn"
+          aria-label="Open navigation" aria-controls="exploreSidebar" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-content" id="exploreMain" tabindex="-1">
+
+      <!-- ── Careers Section ── -->
+      <section class="page-section active" id="section-careers">
+
+        <!-- Toolbar: search + chips on one row -->
+        <div class="explore-toolbar">
+          <div class="explore-search-wrap">
+            <i class="fas fa-search explore-search-icon" aria-hidden="true"></i>
+            <label for="exploreSearch" class="sr-only">Search careers and study topics</label>
+            <input type="search" id="exploreSearch" class="explore-search"
+              placeholder="Search careers, subjects, roles…"
+              autocomplete="off" maxlength="120" enterkeyhint="search">
+          </div>
+          <div class="filter-chips-row" id="filterChips" role="group" aria-label="Filter by category">
+            <button class="filter-chip active" data-cat="all">All careers</button>
+          </div>
+        </div>
+
+        <!-- Search results bar -->
+        <div class="search-results-header" id="searchResultsHeader" style="display:none">
+          <div class="search-result-count" id="searchResultCount">
+            Showing <strong id="searchCount">0</strong> results
+          </div>
+          <button class="search-clear-btn" id="clearSearchBtn">
+            <i class="fas fa-times" aria-hidden="true"></i> Clear search
+          </button>
+        </div>
+
+        <!-- Career grid -->
+        <div class="career-grid" id="careerGrid" aria-live="polite" aria-label="Career results"></div>
+      </section>
+
+      <!-- ── Study Guides Section ── -->
+      <section class="page-section" id="section-study">
+        <div class="study-grid" id="studyGrid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── Career Detail Modal ── -->
+  <div class="modal-overlay career-detail-modal" id="careerModal" role="dialog" aria-modal="true" aria-labelledby="careerModalTitle">
+    <div class="modal" id="careerModalInner">
+      <div class="career-detail-hero">
+        <button class="career-panel-close" id="careerPanelClose" aria-label="Close panel"><i class="fas fa-times"></i></button>
+        <img src="" alt="" id="careerModalImg">
+        <div class="career-detail-hero-overlay">
+          <div class="career-detail-icon" id="careerModalIcon"><i class="fas fa-briefcase"></i></div>
+          <h2 class="career-detail-title-on-hero" id="careerModalTitle">Career Title</h2>
+        </div>
+      </div>
+      <div class="career-detail-body">
+        <div class="career-detail-section" id="careerModalDesc"></div>
+        <div class="career-detail-section" id="careerModalSubjects"></div>
+        <div class="career-detail-section" id="careerModalRoles"></div>
+        <div class="career-detail-section" id="careerModalSalary"></div>
+        <div class="career-detail-section" id="careerModalInstitutions"></div>
+        <div class="career-detail-section" id="careerModalSkills"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="careerModalClose" aria-label="Close modal">
+          <i class="fas fa-times" aria-hidden="true"></i> Close
+        </button>
+        <button class="btn btn-primary" id="careerModalSave">
+          <i class="fas fa-bookmark" aria-hidden="true"></i> Save to My Careers
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Study Guide Modal ── -->
+  <div class="modal-overlay" id="studyModal" role="dialog" aria-modal="true" aria-labelledby="studyModalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="studyModalTitle">Study Guide</h2>
+        <button class="modal-close" id="studyModalClose" aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body" id="studyModalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" aria-live="polite"></div>
+  <script src="data/careers-data.js"></script>
+  <script src="assets/js/auth.js" defer></script>
+  <script src="assets/js/api.js" defer></script>
+  <script src="assets/js/explore.js" defer></script>
+</body>
+</html>

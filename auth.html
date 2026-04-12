@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in or create your free CareerGuide SA account to save careers, set goals, and track your progress.">
+  <title>Sign In — StudentPortfolio</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+  <!-- ── Brand Stripe ── -->
+  <div class="auth-brand-stripe" aria-hidden="true">
+    <div class="auth-stripe-blue"></div>
+    <div class="auth-stripe-red"></div>
+    <div class="auth-stripe-yellow"></div>
+    <div class="auth-stripe-green"></div>
+  </div>
+
+  <div class="auth-grid">
+
+    <!-- ── Left Brand Panel ── -->
+    <aside class="auth-brand" aria-hidden="true">
+      <div class="auth-brand-dots"></div>
+      <div class="auth-brand-content">
+        <a class="auth-logo" href="index.html">
+          <img src="assets/images/logo.png" alt="StudentPortfolio">
+          <span>StudentPortfolio</span>
+        </a>
+        <h2 class="auth-brand-tagline">
+          Your path from<br>high school to a<br><span>career you love</span>
+        </h2>
+        <p class="auth-brand-sub">
+          Discover 10+ South African career pathways, understand real NSC requirements,
+          save your favourites, and track your progress — all completely free.
+        </p>
+        <div class="auth-preview-cards">
+          <div class="auth-preview-card">
+            <div class="auth-preview-icon"><i class="fas fa-laptop-code"></i></div>
+            <div>
+              <h5>Information Technology</h5>
+              <p>Excellent outlook · R20k–R120k/month</p>
+            </div>
+          </div>
+          <div class="auth-preview-card">
+            <div class="auth-preview-icon"><i class="fas fa-stethoscope"></i></div>
+            <div>
+              <h5>Health Sciences</h5>
+              <p>High demand · UCT, Wits, Stellenbosch</p>
+            </div>
+          </div>
+          <div class="auth-preview-card">
+            <div class="auth-preview-icon"><i class="fas fa-gears"></i></div>
+            <div>
+              <h5>Engineering</h5>
+              <p>ECSA registered · R28k–R130k/month</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="auth-brand-footer">© 2026 StudentPortfolio — Free for all South African learners.</p>
+    </aside>
+
+    <!-- ── Right Form Panel ── -->
+    <main class="auth-form-panel">
+      <div class="auth-form-wrap">
+
+        <!-- Mobile logo (shown only on small screens where brand panel is hidden) -->
+        <a class="auth-logo" href="index.html" style="margin-bottom:2rem;color:var(--clr-text);text-decoration:none">
+          <img src="assets/images/logo.png" alt="CareerGuide SA" style="height:32px">
+          <span style="font-weight:700;font-size:1.1rem;font-family:var(--font-display)">
+            Student<span style="color:var(--clr-blue)">Portfolio</span>
+          </span>
+        </a>
+
+        <!-- Form headers (above tabs) -->
+        <div class="auth-form-header" id="loginHeader">
+          <h1>Welcome back</h1>
+          <p>Don't have an account? <a href="#" id="switchToRegister">Create one free</a></p>
+        </div>
+        <div class="auth-form-header" id="registerHeader" style="display:none">
+          <h1>Create your account</h1>
+          <p>Already have an account? <a href="#" id="switchToLogin2">Log in here</a></p>
+        </div>
+
+        <!-- Tab switcher -->
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" id="loginTabBtn" role="tab"
+            aria-selected="true" aria-controls="loginForm">Log in</button>
+          <button class="auth-tab" id="registerTabBtn" role="tab"
+            aria-selected="false" aria-controls="registerForm">Create account</button>
+        </div>
+
+        <!-- ── Login Form ── -->
+        <form class="auth-form active" id="loginForm" role="tabpanel"
+          aria-labelledby="loginTabBtn" novalidate>
+
+          <div class="auth-alert auth-alert-error" id="loginError" role="alert">
+            <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+            <span id="loginErrorMsg">Incorrect email or password.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email address</label>
+            <input class="form-control" type="email" id="loginEmail" name="email"
+              placeholder="you@example.com" autocomplete="email" required>
+            <span class="form-error" id="loginEmailErr">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div class="password-wrap">
+              <input class="form-control" type="password" id="loginPassword" name="password"
+                placeholder="Your password" autocomplete="current-password" required>
+              <button type="button" class="password-toggle" aria-label="Show password" data-target="loginPassword">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="form-error" id="loginPassErr">Please enter your password.</span>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <label class="checkbox-row">
+              <input type="checkbox" id="rememberMe">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" onclick="event.preventDefault();alert('Password reset: please contact admin@studentportfolio.co.za')">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg auth-submit" id="loginBtn">
+            <span class="btn-text">Log in</span>
+            <i class="fas fa-spinner spinner-icon btn-spinner" id="loginSpinner" aria-hidden="true"></i>
+          </button>
+        </form>
+
+        <!-- ── Register Form ── -->
+        <form class="auth-form" id="registerForm" role="tabpanel"
+          aria-labelledby="registerTabBtn" novalidate>
+
+          <div class="auth-alert auth-alert-error" id="registerError" role="alert">
+            <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+            <span id="registerErrorMsg">Something went wrong. Please try again.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="regFirstName">First name</label>
+              <input class="form-control" type="text" id="regFirstName" name="firstName"
+                placeholder="Thabo" autocomplete="given-name" required>
+              <span class="form-error" id="regFirstNameErr">Required.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regLastName">Last name</label>
+              <input class="form-control" type="text" id="regLastName" name="lastName"
+                placeholder="Mokoena" autocomplete="family-name" required>
+              <span class="form-error" id="regLastNameErr">Required.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email address</label>
+            <input class="form-control" type="email" id="regEmail" name="email"
+              placeholder="you@example.com" autocomplete="email" required>
+            <span class="form-error" id="regEmailErr">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regGrade">Current grade</label>
+            <select class="form-control" id="regGrade" name="grade">
+              <option value="">Select your grade</option>
+              <option value="Grade 8">Grade 8</option>
+              <option value="Grade 9">Grade 9</option>
+              <option value="Grade 10">Grade 10</option>
+              <option value="Grade 11">Grade 11</option>
+              <option value="Grade 12">Grade 12 (Matric)</option>
+              <option value="Post-Matric">Post-Matric / Gap Year</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Password</label>
+            <div class="password-wrap">
+              <input class="form-control" type="password" id="regPassword" name="password"
+                placeholder="At least 6 characters" autocomplete="new-password" required>
+              <button type="button" class="password-toggle" aria-label="Show password" data-target="regPassword">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="form-error" id="regPassErr">Password must be at least 6 characters.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regConfirmPassword">Confirm password</label>
+            <div class="password-wrap">
+              <input class="form-control" type="password" id="regConfirmPassword" name="confirmPassword"
+                placeholder="Repeat your password" autocomplete="new-password" required>
+              <button type="button" class="password-toggle" aria-label="Show confirm password" data-target="regConfirmPassword">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+            <span class="form-error" id="regConfirmPassErr">Passwords do not match.</span>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="agreeTerms" required>
+            <span>I agree to the <a href="#" onclick="event.preventDefault();alert('Terms of Use\n\nStudentPortfolio is a free educational tool for South African learners. Content is provided for informational purposes only. Career data, salary ranges, and institution listings are approximate and should be verified independently. By using this site you agree to these terms.\n\nContact: hello@studentportfolio.co.za')">Terms of Use</a> and <a href="#" onclick="event.preventDefault();alert('Privacy Policy\n\nStudentPortfolio respects your privacy. We store only the data you provide (name, email, grade) locally in your browser. No personal data is sent to external servers. We use the World Bank API solely for public education statistics.\n\nContact: hello@studentportfolio.co.za')">Privacy Policy</a></span>
+          </label>
+          <span class="form-error" id="agreeTermsErr">You must accept the terms to continue.</span>
+
+          <button type="submit" class="btn btn-primary btn-lg auth-submit" id="registerBtn">
+            <span class="btn-text">Create my account</span>
+            <i class="fas fa-spinner spinner-icon btn-spinner" id="registerSpinner" aria-hidden="true"></i>
+          </button>
+        </form>
+
+      </div>
+    </main>
+
+  </div><!-- /.auth-grid -->
+
+  <div id="toast-container" aria-live="polite"></div>
+  <script src="assets/js/auth.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    /* ── Redirect if already logged in ── */
+    const existing = Auth.getUser();
+    if (existing) {
+      window.location.href = existing.role === "admin" ? "admin.html" : "dashboard.html";
+    }
+
+    /* ── Check URL param for tab ── */
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("tab") === "register") switchTab("register");
+
+    /* ── Tab switching ── */
+    const loginTabBtn    = document.getElementById("loginTabBtn");
+    const registerTabBtn = document.getElementById("registerTabBtn");
+    const loginForm      = document.getElementById("loginForm");
+    const registerForm   = document.getElementById("registerForm");
+
+    const loginHeader    = document.getElementById("loginHeader");
+    const registerHeader = document.getElementById("registerHeader");
+
+    function switchTab(tab) {
+      if (tab === "register") {
+        loginTabBtn.classList.remove("active");
+        registerTabBtn.classList.add("active");
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+        loginTabBtn.setAttribute("aria-selected", "false");
+        registerTabBtn.setAttribute("aria-selected", "true");
+        if (loginHeader)    loginHeader.style.display    = "none";
+        if (registerHeader) registerHeader.style.display = "";
+      } else {
+        registerTabBtn.classList.remove("active");
+        loginTabBtn.classList.add("active");
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
+        registerTabBtn.setAttribute("aria-selected", "false");
+        loginTabBtn.setAttribute("aria-selected", "true");
+        if (registerHeader) registerHeader.style.display = "none";
+        if (loginHeader)    loginHeader.style.display    = "";
+      }
+    }
+
+    loginTabBtn.addEventListener("click",    () => switchTab("login"));
+    registerTabBtn.addEventListener("click", () => switchTab("register"));
+    document.getElementById("switchToRegister")?.addEventListener("click",  e => { e.preventDefault(); switchTab("register"); });
+    document.getElementById("switchToLogin2")?.addEventListener("click",    e => { e.preventDefault(); switchTab("login"); });
+
+    /* ── Password toggle ── */
+    document.querySelectorAll(".password-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = document.getElementById(btn.dataset.target);
+        const icon   = btn.querySelector("i");
+        if (target.type === "password") {
+          target.type = "text";
+          icon.classList.replace("fa-eye", "fa-eye-slash");
+          btn.setAttribute("aria-label", "Hide password");
+        } else {
+          target.type = "password";
+          icon.classList.replace("fa-eye-slash", "fa-eye");
+          btn.setAttribute("aria-label", "Show password");
+        }
+      });
+    });
+
+    /* ── Helpers ── */
+    function showErr(id, msg) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (msg) el.textContent = msg;
+      el.classList.add("show");
+    }
+    function hideErr(id) { document.getElementById(id)?.classList.remove("show"); }
+    function showAlert(prefix, msg) {
+      const el  = document.getElementById(prefix + "Error");
+      const txt = document.getElementById(prefix + "ErrorMsg");
+      if (txt && msg) txt.textContent = msg;
+      el?.classList.add("show");
+    }
+    function hideAlert(prefix) { document.getElementById(prefix + "Error")?.classList.remove("show"); }
+    function setLoading(btnId, spinnerId, loading) {
+      const btn  = document.getElementById(btnId);
+      const spin = document.getElementById(spinnerId);
+      const txt  = btn?.querySelector(".btn-text");
+      if (!btn) return;
+      btn.disabled = loading;
+      spin?.classList.toggle("active", loading);
+      if (txt) txt.style.opacity = loading ? "0" : "1";
+    }
+
+    /* ── Login ── */
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      hideAlert("login");
+      let valid = true;
+      const email = document.getElementById("loginEmail").value.trim();
+      const pass  = document.getElementById("loginPassword").value;
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr("loginEmailErr"); valid = false; } else hideErr("loginEmailErr");
+      if (!pass) { showErr("loginPassErr"); valid = false; } else hideErr("loginPassErr");
+      if (!valid) return;
+
+      setLoading("loginBtn", "loginSpinner", true);
+      try {
+        const result = await Auth.login(email, pass);
+        setLoading("loginBtn", "loginSpinner", false);
+        if (!result.ok) { showAlert("login", result.message); return; }
+        window.location.href = result.user.role === "admin" ? "admin.html" : "dashboard.html";
+      } catch (err) {
+        setLoading("loginBtn", "loginSpinner", false);
+        showAlert("login", "An unexpected error occurred. Please try again.");
+      }
+    });
+
+    /* ── Register ── */
+    document.getElementById("registerForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      hideAlert("register");
+      let valid = true;
+      const firstName = document.getElementById("regFirstName").value.trim();
+      const lastName  = document.getElementById("regLastName").value.trim();
+      const email     = document.getElementById("regEmail").value.trim();
+      const grade     = document.getElementById("regGrade").value;
+      const pass      = document.getElementById("regPassword").value;
+      const confirm   = document.getElementById("regConfirmPassword").value;
+      const terms     = document.getElementById("agreeTerms").checked;
+
+      if (!firstName) { showErr("regFirstNameErr"); valid = false; } else hideErr("regFirstNameErr");
+      if (!lastName)  { showErr("regLastNameErr");  valid = false; } else hideErr("regLastNameErr");
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr("regEmailErr"); valid = false; } else hideErr("regEmailErr");
+      if (!pass || pass.length < 6) { showErr("regPassErr"); valid = false; } else hideErr("regPassErr");
+      if (pass !== confirm) { showErr("regConfirmPassErr"); valid = false; } else hideErr("regConfirmPassErr");
+      if (!terms) { showErr("agreeTermsErr"); valid = false; } else hideErr("agreeTermsErr");
+      if (!valid) return;
+
+      setLoading("registerBtn", "registerSpinner", true);
+      try {
+        const result = await Auth.register({
+          name: firstName + " " + lastName,
+          email,
+          password: pass,
+          grade
+        });
+        setLoading("registerBtn", "registerSpinner", false);
+        if (!result.ok) { showAlert("register", result.message); return; }
+        window.location.href = "dashboard.html";
+      } catch (err) {
+        setLoading("registerBtn", "registerSpinner", false);
+        showAlert("register", "An unexpected error occurred. Please try again.");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
