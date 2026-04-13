@@ -115,13 +115,13 @@ The app extracts `json[1]`, filters out null values, rounds percentages, and dis
 ## Team Members
 
 | *Buhle Jongile* |
-| *Bantheng Leone Sefoloshe* | 
 | *Simphiwe Mathebula* | 
-| *Velihle Lumkwana* | 
-| *Pride Lesego Modiselle* | 
-| *Esona Mafukula* |
-| *Mamokhulo Montyane* | 
-| *Thando Swartbooi* |
+| ** | 
+| ** | 
+| ** | 
+| ** |
+| ** | 
+| ** |
 
 ## License
 
