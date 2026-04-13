@@ -118,7 +118,7 @@ The app extracts `json[1]`, filters out null values, rounds percentages, and dis
 | *Simphiwe Mathebula* | 
 | *Pride Lesego Modiselle* | 
 | *Thando Swartbooi* | 
-| ** | 
+| *Bantheng Leone Sefoloshe* | 
 | ** |
 | ** | 
 | ** |
