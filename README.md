@@ -1,4 +1,4 @@
-# StudentPortfolio 
+mnk# StudentPortfolio 
 
 A career guidance platform for South African high school learners. Student Portfolio helps students explore career paths, understand subject requirements, compare salaries, and plan their studies — all in a clean, accessible interface built with vanilla web technologies.
 
@@ -120,7 +120,7 @@ The app extracts `json[1]`, filters out null values, rounds percentages, and dis
 | *Thando Swartbooi* | 
 | *Bantheng Leone Sefoloshe* | 
 | ** |Montyane Mamokhulo
-| ** | 
+| ** | Velihle Lumkwana
 | ** |
 
 ## License
